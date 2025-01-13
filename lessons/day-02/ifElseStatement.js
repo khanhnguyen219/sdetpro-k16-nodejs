@@ -27,3 +27,5 @@ if (!isHeOnTime) {
 // Ternary Operator: Toán tử ba ngôi
 let msg = isHeOnTime ? "Let's talk !" : "Write a letter....";
 console.log(msg);
+
+// ES6: Arrow function
