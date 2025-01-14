@@ -13,12 +13,40 @@ let clientHeight = Number(readline.question("Your height:  "));
 
 let clientBMI = clientWeight / (clientHeight * clientHeight);
 
+let isUnderweight = false;
+let isOverweight = false;
+let isoNormalWeight = false;
+let isObesity = false;
+
 if (clientBMI < 18.5) {
-    console.log(`Underweight, your BMI is:  ${clientBMI} you need to gain weight`);
+    isUnderweight = true;
 }else if (clientBMI >= 18.5 && clientBMI <= 24.9) {
-    console.log(`Normal weight, your BMI is:  ${clientBMI} you should stay this way`);
+    isoNormalWeight = true;
 }else if (clientBMI >= 25 && clientBMI <= 29.9) {
-    console.log(`Overweight, your BMI is: ${clientBMI} you need to lose weight` );
+    isOverweight = true;
 }else{
-    console.log(`Obesity, your BMI is: ${clientBMI} you need to lose weight immediately`);
+    isObesity = true;
+}
+
+
+if(isUnderweight){
+    let ideaW = 18.5 * (clientHeight * clientHeight);
+    let needToGain = ideaW - clientWeight;
+    console.log(`Underweight, your BMI is:  ${clientBMI} you need to gain weight ${needToGain} kg`);
+}
+
+if(isoNormalWeight){
+    console.log(`Normal weight, your BMI is:  ${clientBMI} your weight is ideal`);
+}
+
+if(isOverweight){
+    let ideaW = 29.9 * (clientHeight * clientHeight);
+    let needToLoose = clientWeight - ideaW;
+    console.log(`Overweight, your BMI is: ${clientBMI} you need to lose weight ${needToLoose} kg` );
+}
+
+if(isObesity){
+    let ideaW = 29.9 * (clientHeight * clientHeight);
+    let needToLoose = clientWeight - ideaW;
+    console.log(`Obesity, your BMI is: ${clientBMI} you need to lose weight ${needToLoose} kg`);
 }
