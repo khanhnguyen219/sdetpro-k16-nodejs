@@ -32,7 +32,26 @@ function countEvenAndOddNum(arr){
     return{even: evenNum, odd: oddNum};
 }
 
+
+function removeOddNum(arr){
+    for (let index = arr.length -1; index >= 0; index--) {
+        if (arr[index] % 2 !==0) {
+            arr.splice(index, 1);
+        }
+        
+    }
+    return {evenArr: arr};
+}
+
+
+function sortNumberASC(num1, num2){
+    return num1 - num2;
+}
+
+
 module.exports = {
     findMinMax,
-    countEvenAndOddNum
+    countEvenAndOddNum,
+    removeOddNum,
+    sortNumberASC
 }
