@@ -19,17 +19,24 @@ function findMinMax(arr) {
 function countEvenAndOddNum(arr){
     let evenNum = 0;
     let oddNum = 0;
-    for (let index = 0; index < arr.length; index++) {
-        if (arr[index] % 2 ===0) {
-            evenNum++;
+    let evenNumberArr = [];
+    let oddNumberArr = [];
+        for (let index = 0; index < arr.length; index++) {
+            const value = arr[index];
+            if (isOddNumber(value)) {
+                oddNum++;
+                oddNumberArr.push(value);
+            }else{
+                evenNum++;
+                evenNumberArr.push(value);
+                
+            }
         }
-
-        if (arr[index] % 2 !==0) {
-            oddNum++;
-        }
-        
+        return{even: evenNum, odd: oddNum, evenArray: evenNumberArr, oddArray: oddNumberArr};
     }
-    return{even: evenNum, odd: oddNum};
+
+function isOddNumber(value) {
+    return value % 2 !== 0;
 }
 
 
@@ -46,6 +53,14 @@ function removeOddNum(arr){
 
 function sortNumberASC(num1, num2){
     return num1 - num2;
+}
+
+function printArray(arr) {
+    if (arr.length === 0) {
+        return '';
+    }else{
+        return `---> ${arr}`
+    }
 }
 
 
