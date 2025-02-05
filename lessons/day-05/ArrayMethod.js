@@ -35,3 +35,7 @@ function sortNumberASC(num1, num2){
 function sortNumberDESC(num1, num2){
     return num2 - num1;
 }
+
+let mixedContent = ['a', 'A', '1'];
+mixedContent.sort();
+console.log(mixedContent);
