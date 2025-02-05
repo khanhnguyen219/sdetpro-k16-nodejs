@@ -68,5 +68,6 @@ module.exports = {
     findMinMax,
     countEvenAndOddNum,
     removeOddNum,
-    sortNumberASC
+    sortNumberASC,
+    printArray
 }
