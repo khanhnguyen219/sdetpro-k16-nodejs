@@ -71,7 +71,7 @@ function printArray(arr) {
 //                 swapASC(arr, index);
 //             }
 //         }
-        
+
 //     }
 //     return arr;
 // }
@@ -108,7 +108,7 @@ function bubbleSort2(arr) {
         unsortedPosition--;
     }
     return arr;
-    
+
 }
 
 function swapASC(arr, index) {
@@ -117,10 +117,54 @@ function swapASC(arr, index) {
     arr[index + 1] = temp;
 }
 
+function ArrayASCSorting(foo, bar) {
+let fooPosition = 0;
+let barPosition = 0;
+let merged = [];
+
+const fooLenght = foo.length;
+const barLenght = bar.length;
+
+
+    while (fooStillHaveElement(fooPosition, fooLenght) && barStillHaveElement(barPosition, barLenght)) {
+        const fooValue = foo[fooPosition];
+        const barValue = bar[barPosition];
+
+        if (fooValue <= barValue) {
+            merged.push(fooValue);
+            fooPosition++;
+        }else{
+            merged.push(barValue);
+            barPosition++;
+        }
+    }
+
+    while (fooStillHaveElement(fooPosition, fooLenght)) {
+        merged.push(foo[fooPosition]);
+        fooPosition++;
+    }
+
+    while (barStillHaveElement(barPosition, barLenght)) {
+        merged.push(bar[barPosition]);
+        barPosition++;
+    }
+
+    return {mergedArray: merged};
+}
+
+function fooStillHaveElement(fooPosition, fooLenght){
+    return fooPosition < fooLenght;
+}
+
+function barStillHaveElement(barPosition, barLenght){
+    return barPosition < barLenght;
+}
+
 module.exports = {
     findMinMax,
     countEvenAndOddNum,
     removeOddNum,
     printArray,
-    bubbleSort1
+    bubbleSort1,
+    ArrayASCSorting
 }
