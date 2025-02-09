@@ -9,11 +9,11 @@ function findMinMax(arr) {
         } else if (value > maxValue) {
             maxValue = value;
         }
-        return{message};
+        return { message };
     }
     if (minValue === maxValue) {
         const message = `There is no min/max value, all values are same: ${minValue}`;
-        
+
     }
     return { min: minValue, max: maxValue }
 }
@@ -52,11 +52,6 @@ function removeOddNum(arr) {
     return { evenArr: arr };
 }
 
-
-function sortNumberASC(num1, num2) {
-    return num1 - num2;
-}
-
 function printArray(arr) {
     if (arr.length === 0) {
         return '';
@@ -66,10 +61,66 @@ function printArray(arr) {
 }
 
 
+// function bubbleSort(arr) {
+//     let unsortedPosition = arr.length - 1;
+//     for (let i = 0; i < unsortedPosition; i++) {
+//         for (let index = 0; index < unsortedPosition - i; index++) {
+//             const leftValue = arr[index];
+//             const rightValue = arr[index+1];
+//             if (leftValue > rightValue) {
+//                 swapASC(arr, index);
+//             }
+//         }
+        
+//     }
+//     return arr;
+// }
+
+
+function bubbleSort1(arr) {
+    let unsortedPosition = arr.length - 1;
+    for (; unsortedPosition > 0; unsortedPosition--) {
+        for (let index = 0; index < unsortedPosition; index++) {
+            const leftValue = arr[index];
+            const rightValue = arr[index + 1];
+            if (leftValue > rightValue) {
+                swapASC(arr, index);
+            }
+
+        }
+
+    }
+    return arr;
+}
+
+
+function bubbleSort2(arr) {
+    let unsortedPosition = arr.length - 1;
+    while (unsortedPosition > 0) {
+        for (let index = 0; index < unsortedPosition; index++) {
+            const leftValue = arr[index];
+            const rightValue = arr[index + 1];
+            if (leftValue > rightValue) {
+                swapASC(arr, index);
+            }
+
+        }
+        unsortedPosition--;
+    }
+    return arr;
+    
+}
+
+function swapASC(arr, index) {
+    let temp = arr[index];
+    arr[index] = arr[index + 1];
+    arr[index + 1] = temp;
+}
+
 module.exports = {
     findMinMax,
     countEvenAndOddNum,
     removeOddNum,
-    sortNumberASC,
-    printArray
+    printArray,
+    bubbleSort1
 }
