@@ -1,3 +1,4 @@
+
 let myString = ` Day là chu trong \`nhay don\``;
 console.log(myString);
 
@@ -34,3 +35,17 @@ let secondString = ", tui ten teo";
 let combinedStr = firstString.concat(secondString).concat("!" + "!");
 console.log(combinedStr);
 
+// Sub string
+let strToBeCut = "https://sdetpro.com";
+
+// Inclusive
+let startIndex = 0;
+
+// Exclusive
+let endIndex = 5;
+
+let subString = strToBeCut.substring(startIndex, endIndex);
+console.log(subString);
+
+// split
+console.log(strToBeCut.split("://"));
