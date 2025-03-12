@@ -18,11 +18,11 @@ function handleUserChoice() {
                 const selectedUserId = Number(readlineSync.question("Enter User ID: "));
                 const selectedPostId = Number(readlineSync.question("Enter Post ID: "));
                 fetchPostById(selectedUserId, selectedPostId);
-                break;
+                return;
             case 2:
                 const requestedUserId = Number(readlineSync.question("Enter User ID: "));
                 fetchPostsByUser(requestedUserId);
-                break;
+                return;
             case 0:
                 console.log("Exiting...");
                 return;
