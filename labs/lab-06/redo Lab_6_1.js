@@ -6,7 +6,7 @@ function handleUserChoise(){
 }
 
 function getPostByID(){
-fetch(`${API_URL}/post/${postID}`)
+fetch(`${API_URL}/post/${Post}`)
     if (postID.userID != inputUserID) {
         console.log('lỗi');
         
